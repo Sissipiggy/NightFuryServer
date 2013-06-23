@@ -75,7 +75,7 @@ public class NewsService implements INewsService {
 					.reverse((ArrayList<News>) newsList);
 			dao.saveAll(reversedList);
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -113,7 +113,7 @@ public class NewsService implements INewsService {
 					.reverse((ArrayList<News>) newsList);
 			dao.saveAll(reversedList);
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -128,9 +128,9 @@ public class NewsService implements INewsService {
 					"&nbsp;");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content, "\n");
 			return content;
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			return "没有规格化的消息，请用PC查看内容！";
 		}
 	}
 
