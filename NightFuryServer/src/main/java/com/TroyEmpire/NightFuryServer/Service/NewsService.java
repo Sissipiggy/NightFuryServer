@@ -1,7 +1,5 @@
 package com.TroyEmpire.NightFuryServer.Service;
 
-import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import com.TroyEmpire.NightFuryServer.Constant.Constant;
 import com.TroyEmpire.NightFuryServer.Constant.NewsType;
-import com.TroyEmpire.NightFuryServer.DAO.NewsDAO;
 import com.TroyEmpire.NightFuryServer.Entity.News;
 import com.TroyEmpire.NightFuryServer.IDAO.INewsDAO;
 import com.TroyEmpire.NightFuryServer.IService.INewsService;
@@ -123,7 +120,7 @@ public class NewsService implements INewsService {
 			String content = Jsoup.connect(url).execute().parse()
 					.getElementById("BodyLabel").html();
 			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style",
-					"\">");
+					">");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content,
 					"&nbsp;");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content, "\n");
@@ -148,7 +145,7 @@ public class NewsService implements INewsService {
 					.parse().getElementsByAttributeValue("class", "news")
 					.get(0).html();
 			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style",
-					"\">");
+					">");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content,
 					"&nbsp;");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content, "\n");

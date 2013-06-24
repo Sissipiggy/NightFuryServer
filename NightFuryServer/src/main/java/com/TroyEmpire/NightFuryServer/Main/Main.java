@@ -17,7 +17,7 @@ public class Main
     
     public Main()
     {
-        server = new WebServer(8000);        
+        server = new WebServer(80);        
     }
     
     public void start() throws Exception

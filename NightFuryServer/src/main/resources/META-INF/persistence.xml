@@ -15,7 +15,9 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 			<!-- The Database connection should be abale to be configured dinamiclly -->
 			<property name="hibernate.connection.password" value="Hebe" />
 			<property name="hibernate.connection.url"
-				value="jdbc:mysql://202.116.3.39:3306/Hebe" />
+				value="jdbc:mysql://127.0.0.1:3306/NightFuryServer" />
+<!-- <property name="hibernate.connection.url" -->
+<!--  				value="jdbc:mysql://192.168.0.254:3306/NightFuryServer" /> -->
 			<property name="hibernate.connection.username" value="Hebe" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 

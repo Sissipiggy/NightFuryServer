@@ -13,7 +13,7 @@ public class Constant {
 	public static final String XSC_PORTAL_URL = "http://xsc.jnu.edu.cn/";
 	public static final String JWC_ROOT_URL = "http://jwcweb.jnu.edu.cn/";
 	// the interval to grab the news
-	public static final int INTERVAL_GRAB_NEWS = 3600000;
+	public static final int INTERVAL_GRAB_NEWS = 5*60*1000;
 	
 	// the number of returned news to the client side
 	public static final int NUMBER_UPDATE_NEWS_TO_CLIENT = 20;

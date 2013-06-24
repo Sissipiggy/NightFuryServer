@@ -15,7 +15,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +33,6 @@ import com.TroyEmpire.NightFuryServer.IService.IRestaurantService;
 @RequestMapping("/restaurant")
 public class RestaurantController {
 
-	private Logger log = Logger.getLogger(RestaurantController.class);
 
 	@Autowired
 	private IRestaurantService rstService;
@@ -110,10 +108,8 @@ public class RestaurantController {
 			IOUtils.copy(new FileInputStream(file),
 					new FileOutputStream(fileto));
 			file.delete();
-			log.info(res.getName() + " has been added! ");
 
 		} catch (Exception e) {
-			log.error(e.toString());
 			return "createNewRestaurantError";
 		}
 		model.addAttribute("restaurants",
