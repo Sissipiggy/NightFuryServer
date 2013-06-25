@@ -119,15 +119,15 @@ public class NewsService implements INewsService {
 		try {
 			String content = Jsoup.connect(url).execute().parse()
 					.getElementById("BodyLabel").html();
-			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style",
-					">");
+			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style=\"",
+					"\"");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content,
 					"&nbsp;");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content, "\n");
 			return content;
 		} catch (Exception e) {
-			e.printStackTrace();
-			return "没有规格化的消息，请用PC查看内容！";
+			System.out.println("信息平台学生处获取信息异常抛出。");
+			return "没有规格化的消息，或许是一个外部链接，请用PC查看内容！";
 		}
 	}
 
@@ -144,16 +144,16 @@ public class NewsService implements INewsService {
 			String content = Jsoup.connect(legalUrl).method(Method.GET).execute()
 					.parse().getElementsByAttributeValue("class", "news")
 					.get(0).html();
-			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style",
-					">");
+			content = HtmlUtil.optimizeHtmlByDeleteRangeMark(content, "style=\"",
+					"\"");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content,
 					"&nbsp;");
 			content = HtmlUtil.optimizeHtmlByDeleteSpecificSlice(content, "\n");
 			return content;
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			System.out.println("信息平台教务处获取信息异常抛出。");
+			return "没有规格化的消息，或许是一个外部链接，请用PC查看内容！";
 		}
 	}
 
