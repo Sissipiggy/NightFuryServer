@@ -20,6 +20,9 @@ public class HtmlUtil {
 			tempSubstring = trimedBody.substring(startPoint);
 			if((endPoint =  startPoint + tempSubstring.indexOf(endMark)) < trimedBody.length())
 			trimedBody.delete(startPoint, endPoint + 1);
+			if(startPoint >= endPoint + 1){
+				break;
+			}
 		}
 		return trimedBody.toString();
 	}
