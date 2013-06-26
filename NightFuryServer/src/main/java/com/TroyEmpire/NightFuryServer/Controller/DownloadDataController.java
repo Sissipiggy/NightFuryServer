@@ -81,6 +81,7 @@ public class DownloadDataController {
 		response.setHeader("Content-Disposition",
 				"attachment;filename=Hebe_Beta.apk");
 		try {
+			// download the apk
 			ServletOutputStream out = response.getOutputStream();
 			File dataZipFile = new File(zipFilePath + "\\NightFury.apk");
 			InputStream in = new FileInputStream(dataZipFile);
@@ -92,6 +93,7 @@ public class DownloadDataController {
 			interDao.save(internalStatistics);
 
 		} catch (Exception e) {
+			// download progress is interrupted
 			e.printStackTrace();
 		}
 	}

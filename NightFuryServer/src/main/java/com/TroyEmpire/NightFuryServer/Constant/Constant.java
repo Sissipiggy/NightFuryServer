@@ -17,6 +17,9 @@ public class Constant {
 	
 	// the number of returned news to the client side
 	public static final int NUMBER_UPDATE_NEWS_TO_CLIENT = 20;
+
+	// the bytes of the apk file
+	public static final int APK_BYTES = 4500000;
 	
 	
 	
